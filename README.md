@@ -18,8 +18,9 @@ An advanced AI tool built with **Streamlit** and **Google Gemini 2.5 Flash** to 
 - **PDF Parsing:** PyPDF2
 
 ## 🚀 How to Run Locally
-
-1. **Clone the repository:**
+1. Check the live Resume-analyzer - https://m-resume-analyzer.streamlit.app/
+2. **Clone the repository:**
    ```bash
    git clone [https://github.com/Madhuranga-web/resume-analyzer.git](https://github.com/Madhuranga-web/resume-analyzer.git)
    cd resume-analyzer
+   
