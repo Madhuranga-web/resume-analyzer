@@ -4,15 +4,15 @@ import PyPDF2 as pdf
 import os
 from dotenv import load_dotenv
 
-# Environment variables load කිරීම
+
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 
-# Gemini API සැකසුම්
+
 genai.configure(api_key=api_key)
 
 def get_gemini_response(input_prompt, resume_content, job_description):
-    # ඔබේ ලැයිස්තුවේ තිබූ නවතම gemini-2.5-flash භාවිතා කර ඇත
+    
     model = genai.GenerativeModel('gemini-2.5-flash') 
     full_prompt = f"{input_prompt}\n\nJob Description: {job_description}\n\nResume Content: {resume_content}"
     response = model.generate_content(full_prompt)
@@ -28,7 +28,7 @@ def extract_text_from_pdf(uploaded_file):
 # --- Streamlit UI Design ---
 st.set_page_config(page_title="AI Resume Analyzer Pro", layout="wide")
 
-# CSS මගින් UI එක ලස්සන කිරීම
+# CSS 
 st.markdown("""
     <style>
     .main { background-color: #f8f9fa; }
@@ -66,7 +66,7 @@ with col2:
 # Analyze Button
 submit = st.button("Analyze Resume")
 
-# AI Prompt එක
+# AI Prompt
 input_prompt_template = """
 As an experienced Technical Human Resource Manager and ATS (Applicant Tracking System) expert, 
 your task is to evaluate the provided resume against the given job description. 
@@ -109,4 +109,5 @@ st.markdown("""
         <hr>
         <p>© 2026 Madhuranga Wijesooriya | All Rights Reserved | Powered by Gemini 2.5 Flash</p>
     </div>
+
     """, unsafe_allow_html=True)
